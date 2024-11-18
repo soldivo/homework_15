@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Hinoki</title>
+  </head>
+  <body class="font-main bg-gray-100">
+    <header
+      class="bg-no-repeat bg-center flex flex-wrap h-screen"
+      style="background-image: url(img/hero.jpg)"
+    >
+      <nav class="p-4 flex w-full h-2/6 lg:mb-20 sm:mb-40">
+        <div class="container mx-auto flex justify-between items-center">
+          <a
+            class="flex items-center sm:ml-12 lg:ml-40 sm:w-1/12 lg:w-1/12"
+            href="#"
+          >
+            <img src="img/logo.png" alt="logo" />
+          </a>
+          <button
+            id="menu-toggle"
+            class="text-white lg:hidden focus:outline-none mr-12"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+          <div id="menu" class="hidden lg:flex space-x-4">
+            <ul
+              class="flex justify-between items-center sm:ml-20 lg:ml-64 w-2/6"
+            >
+              <li class="nav__link">
+                <a class="font-medium leading-5 uppercase text-sm" href="#"
+                  >Головна
+                </a>
+              </li>
+              <li class="nav__link">
+                <a class="font-medium leading-5 uppercase text-sm" href="#"
+                  >Меню</a
+                >
+              </li>
+              <li class="nav__link">
+                <a class="font-medium leading-5 uppercase text-sm" href="#"
+                  >Про нас</a
+                >
+              </li>
+              <li class="nav__link">
+                <a class="font-medium leading-5 uppercase text-sm" href="#"
+                  >Бронь</a
+                >
+              </li>
+            </ul>
+            <ul class="flex items-center ml-12 mr-40">
+              <li class="nav__link flex flex-wrap w-6/12">
+                <div class="flex items-center flex-nowrap w-full">
+                  <img
+                    class="w-1/6 h-3/6"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAvVJREFUSEvFllmIT3EUxz9fW0SUB8nyZhmUZCQhlOWBebBOYpo8yPIg2R4sKUkpSxIKb4ayjvIiHkRDWUdSlihRSkK2kgeOe6bfv+7cuff+7/xNzX2753d+53N+53eWn+ikT53E5b/BZrYM6Aq8BR5I+lXkMB0Bvg1MCbC/wH3gkKRzeQ5kgs1sG7ABOCJpV5YRM4uD42ouny/pc9reNmAz6wmcApbENuyUtDvNgJn1AoYB44FFUbjnAV2C7ktgpqT3yb2twGbWG7gBTEyBrJF0vNz9mZk7cRSYE3SfA5MlfY3vTYInA3cyjBtQK+lifN3MVgBDgEZJz3zNzNzufmBj0L0saWEeeBpwK+dUf6LkmSvpeknHzG4C08P/NWC7pEfBgUZgQVirltRc2pc88dhI8UmZcHq5jJf0IhiPg1tEwCRJ981sMPAG6A40SKrPAvcDWt1FhhNbJHkoPayeXKOAtcDKoN8sqTqsNwB1wCdggCR3rG0DMbN3wNCcUz8GZkj6ntQxs0PA+iAf43ceGsyZIBsnqSWiaeXkhV+bAX4YJd/sZIbG7ttP3pJgQL2kBjOrAjyz/fPkvJAFXh7V5ekU8L0A/ZEVjRD2q2H9mKTzCdnRPLDf80egRwIwQtKrMolXeDm1ZZqZN4pVCSubJB0sbLmMYhZ4dNT+nsZan5v5BlRJ+pBm08wGAD6pmkp1nMfOGxLxDC3ZcGc8o7/EjZpZf8CHgieXN5k6SWcrBfcBvMkPShhwWY2k1y4P/d2byISE3mpJJ7LgufPYzLwJNAHeJOKfz92TwF7A86E0EJKcrZJcp81X9iFgZjVRi7ySVvMFE83n+bqkbllwCOdS77VAt4KwpNoBSZvjwkLgAPdwnge8ztv7/QT6lvq0by4MDvCBwOHE66SIEzsk7anoxInymQrs8/FXgHpJ0uKK7jjLuJkNj+p3lj8O/G2Vkv13Q93/7lBwIgr+th7pMzcmfxglld9v+8upQCgrUmlXclVEyNjUaeB/CgL5H85pPyIAAAAASUVORK5CYII="
+                    alt="telephone"
+                  />
+                  <p class="font-bold leading-6 text-lg">+380 63 123 45 67</p>
+                </div>
+                <p class="font-normal leading-5 text-sm">
+                  Зв'яжіться з нами для бронювання
+                </p>
+              </li>
+              <li class="nav__link rounded text-sm pl-3 bg-orange-500">
+                <a class="flex justify-center text-center" href="#"
+                  >ЗАКАЗ СТОЛИКА</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          id="mobile-menu"
+          class="lg:hidden hidden flex flex-col space-y-2 mt-2 p-4 mb"
+        >
+          <ul class="flex flex-col items-center ml-5 w-2/6">
+            <li class="nav__link">
+              <a class="font-medium leading-5 uppercase text-sm" href="#"
+                >Головна
+              </a>
+            </li>
+            <li class="nav__link">
+              <a class="font-medium leading-5 uppercase text-sm" href="#"
+                >Меню</a
+              >
+            </li>
+            <li class="nav__link">
+              <a class="font-medium leading-5 uppercase text-sm" href="#"
+                >Про нас</a
+              >
+            </li>
+            <li class="nav__link">
+              <a class="font-medium leading-5 uppercase text-sm" href="#"
+                >Бронь</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <section
+        class="flex text-center flex-col justify-center items-center lg:pl-44 lg:pb-36 sm:pb-24 sm:w-full lg:w-auto"
+      >
+        <h1 class="font-normal leading-[3.6rem] text-5xl text-amber-600">
+          Ласкаво просимо в
+        </h1>
+        <h2 class="font-normal leading-[5.7rem] text-7xl text-amber-600">
+          Наш ресторан
+        </h2>
+        <p class="font-normal leading-6 text-lg text-white p-4">
+          ДІМ КРАЩОЇ ЇЖИ
+        </p>
+        <a
+          href="#"
+          class="flex justify-center items-center font-bold leading-5 text-sm text-white rounded bg-orange-500 w-3/12 h-10"
+          >VIEW MENU</a
+        >
+      </section>
+      <section class="flex justify-around flex-wrap w-full">
+        <div class="intro">
+          <img class="pt-12" src="img/dish.png" alt="dish" />
+          <h3 class="intro-special">
+            Магічна
+            <span class="text-special">Атмосфера</span>
+          </h3>
+          <p class="text-intro">
+            У нашому закладі панує магічна атмосфера, наповнена смачними
+            ароматами.
+          </p>
+        </div>
+        <div class="intro">
+          <img class="pt-12" src="img/dish.png" alt="dish" />
+          <h3 class="intro-special">
+            Найкраща <span class="text-special">Їжа</span>
+          </h3>
+          <p class="text-intro">
+            Наші страви готуються тільки з якісних продуктів тому якість нашої
+            їжі - чудова!
+          </p>
+        </div>
+        <div class="intro">
+          <img class="pt-12" src="img/dish.png" alt="dish" />
+          <h3 class="intro-special">
+            Недорога
+            <span class="text-special">Їжа</span>
+          </h3>
+          <p class="text-intro">
+            Вартість нашої їжі залежить лише від її кількості. Якість завжди на
+            висоті!
+          </p>
+        </div>
+      </section>
+    </header>
+    <div class="flex items-center justify-center">
+      <div
+        class="flex justify-center items-center flex-wrap pt-96 w-1/3 lg:mt-36 sm:mt-20"
+      >
+        <h4
+          class="leading-[3.375rem] font-normal text-5xl flex justify-center text-center"
+        >
+          Наша
+          <span class="text-special">Історія</span>
+        </h4>
+        <p
+          class="flex justify-center text-center font-normal text-base text-neutral-600 pt-5"
+        >
+          Як і в будь-якого іншого самобутнього місця, ми маємо свою, особливу
+          історію. Ідея ресторану прийшла засновникам несподівано. Під час
+          прогулянки лісом творець нашого ресторану застряг за сотні кілометрів
+          від найближчого населеного пункту. Вдалині від цивілізації і зв'язку
+          їм довелося вчасно облаштувати собі нехитрий побут, добувати і
+          готувати собі їжу.
+        </p>
+        <div class="flex flex-wrap justify-around w-full pt-10">
+          <div class="flex items-center flex-col text-center">
+            <h4 class="history-special">93</h4>
+            <p class="history-text">Напої</p>
+          </div>
+          <div class="flex items-center flex-col text-center">
+            <h4 class="history-special">206</h4>
+            <p class="history-text">Їжа</p>
+          </div>
+          <div class="flex items-center flex-col text-center">
+            <h4 class="history-special">71</h4>
+            <p class="history-text">Закуски</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-row bg-no-repeat bg-center bg-cover mt-44"
+      style="background-image: url(img/banner.jpg)"
+    >
+      <div class="flex flex-wrap w-2/3">
+        <h3
+          class="text-special font-normal lg:text-5xl sm:text-3xl leading-[3.75rem] pt-20 sm:ml-20 lg:ml-40"
+        >
+          Відсвяткуйте в одному із найкращих ресторанів.
+        </h3>
+        <p
+          class="font-bold lg:text-2xl sm:text-xl text-white pt-5 sm:ml-20 lg:ml-40 pb-28"
+        >
+          Тільки цього місяця бізнес-ланч від 250грн
+        </p>
+      </div>
+      <div class="flex justify-center items-center w-1/3">
+        <a
+          class="flex justify-center items-center text-center font-bold leading-5 text-sm text-white rounded bg-orange-500 sm:w-5/12 lg:w-3/12 h-10"
+          href="#"
+          >ЗАКАЗ СТОЛИКА</a
+        >
+      </div>
+    </div>
+    <div
+      class="flex flex-col justify-center items-center bg-no-repeat bg-center bg-cover lg:mt-36 sm:my-20 w-full"
+      style="background-image: url(img/menu.jpg)"
+    >
+      <h2
+        class="menu-title font-normal lg:text-5xl sm:text-4xl leading-[3.875rem] text-white mt-24"
+      >
+        Наше меню
+      </h2>
+      <div
+        class="flex justify-around items-center w-full sm:mt-24 sm:mb-32 lg:mt-36 lg:mb-56 sm:flex-col lg:flex-row"
+      >
+        <div class="burger-card">
+          <img class="burger-picture" src="img/burger.jpg" alt="burger" />
+          <h5 class="menu-special">Мексиканський Бургер</h5>
+          <p class="menu-text">Гострий, Соковитий, З Авокадо Соусом</p>
+          <div
+            class="flex justify-center items-center font-bold leading-5 sm:text-base lg:text-sm text-white rounded bg-orange-500 sm:h-12 w-2/4 lg:h-10 mt-5 mb-7"
+          >
+            <a href="#">ЗАМОВИТИ</a>
+          </div>
+        </div>
+        <div class="burger-card">
+          <img
+            class="burger-picture"
+            src="img/cheesburger.jpg"
+            alt="cheesburger"
+          />
+          <h5 class="menu-special">Чеддер Бекон Бургер</h5>
+          <p class="menu-text">Соковитий, Сирний, З Хрумким Беконом.</p>
+          <div
+            class="flex justify-center items-center font-bold leading-5 text-sm text-white rounded bg-orange-500 w-2/4 h-10 mt-5 mb-7"
+          >
+            <a href="">ЗАМОВИТИ</a>
+          </div>
+        </div>
+        <div class="burger-card">
+          <img class="burger-picture" src="img/texas.jpg" alt="texas" />
+          <h5 class="menu-special">Гострий Техас Бургер</h5>
+          <p class="menu-text">Пікантний, З Перцем, BBQ Соусом.</p>
+          <div
+            class="flex justify-center items-center font-bold leading-5 text-sm text-white rounded bg-orange-500 w-2/4 h-10 mt-5 mb-7"
+          >
+            <a href="">ЗАМОВИТИ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center items-center">
+      <div class="flex flex-col justify-center items-center mt-24 w-1/2">
+        <p class="font-normal lg:text-xl sm:text-2xl text-center italic">
+          Я надовго запам'ятаю мій День народження, проведений у цьому
+          ресторані! Шматок рідної Вірменії! Окреме дякую за комплепент у
+          вигляді фруктові пластини. Рекомендуємо цей ресторан своїм друзям та
+          родичам також за кордоном!
+        </p>
+        <div class="lg:w-1/5 sm:w-2/5 h-10 lg:pt-7 sm:pt-12">
+          <img class="rounded-full" src="img/review.jpg" alt="review" />
+        </div>
+        <p class="font-semibold text-xl lg:pt-36 sm:pt-28">Відвідувач</p>
+        <p class="font-normal text-xl pb-36">Дмитро</p>
+      </div>
+    </div>
+    <div class="flex justify-center items-center bg-white">
+      <div class="flex flex-col justify-center items-center">
+        <h3 class="font-normal lg:text-5xl sm:text-4xl leading-[4rem] mt-24">
+          Галерея <span class="text-special">Страв</span>
+        </h3>
+        <div class="grid grid-rows-2 grid-cols-4 lg:gap-8 sm:gap-5 p-20">
+          <div class="col-span-2">
+            <img class="h-full" src="img/gallery1.jpg" alt="gallery1" />
+          </div>
+          <div>
+            <img src="img/gallery2.jpg" alt="gallery2" />
+          </div>
+          <div>
+            <img src="img/gallery3.jpg" alt="gallery3" />
+          </div>
+          <div>
+            <img src="img/gallery4.jpg" alt="gallery4" />
+          </div>
+          <div>
+            <img src="img/gallery5.jpg" alt="gallery5" />
+          </div>
+          <div class="col-span-2">
+            <img class="h-full" src="img/gallery6.jpg" alt="gallery6" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center items-center bg-white lg:pb-24 sm:pb-14">
+      <div class="flex flex-col justify-center items-center">
+        <h3
+          class="font-normal lg:text-5xl sm:text-4xl leading-[4rem] lg:mt-24 sm:mt-14"
+        >
+          Наші <span class="text-special">Кухарі</span>
+        </h3>
+        <div
+          class="flex justify-around lg:flex-row sm:flex-col w-full lg:pt-24 sm:pt-12"
+        >
+          <img
+            class="lg:w-1/4 sm:w-11/12 sm:pb-10"
+            src="img/cooker1.jpg"
+            alt="cooker1"
+          />
+          <img
+            class="lg:w-1/4 sm:w-11/12 sm:pb-10"
+            src="img/cooker2.jpg"
+            alt="cooker2"
+          />
+          <img
+            class="lg:w-1/4 sm:w-11/12 sm:pb-10"
+            src="img/cooker3.jpg"
+            alt="cooker3"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-row w-full outline outline-black">
+      <div class="w-1/2 outline outline-black">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42832.420796597245!2d35.02842664718628!3d47.85845391079619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc66daa9950435%3A0xb5c478cdf6a45582!2sMcDonald&#39;s!5e0!3m2!1ses!2ses!4v1731633513622!5m2!1ses!2ses"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full"
+        ></iframe>
+      </div>
+      <div class="flex flex-col justify-start bg-gray-300 w-1/2 p-8">
+        <img class="w-1/6" src="img/logo.png" alt="logo" />
+        <p class="font-bold text-2xl pt-8">+380 63 123 45 67</p>
+        <p class="font-medium text-xl">Запоріжжя, пр. Соборний, 218А</p>
+        <div class="flex flex-wrap w-1/2 pt-5">
+          <a class="footer-text" href="#">Прайс</a>
+          <a class="footer-text" href="#">Розклад</a>
+          <a class="footer-text" href="#">О нас</a>
+          <a class="footer-text" href="#">Блог</a>
+          <div class="flex justify-start w-1/2 pt-5">
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: "
+              >
+                <path
+                  d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"
+                ></path>
+                <circle cx="16.806" cy="7.207" r="1.078"></circle>
+                <path
+                  d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+          <div class="pt-5">
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: "
+              >
+                <path
+                  d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <a class="font-normal text-base hover:underline pt-8" href="#">
+          Політика конфіденційності</a
+        >
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
