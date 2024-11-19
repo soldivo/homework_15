@@ -53,5 +53,9 @@
 }
 
 .footer-text {
-  @apply font-medium text-sm w-1/2;
+  @apply font-medium text-sm w-1/2 hover:underline;
+}
+
+.btn {
+  @apply transition-all duration-500 hover:bg-orange-600;
 }
